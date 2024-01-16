@@ -12,8 +12,39 @@
 <h1>Goodcard - track your collection of Pokémon cards</h1>
 
 <ul>
-    <?php foreach ($cards as $card) : ?>
-        <li><?= $card['name'] ?></li>
+    <?php
+    $cards = [
+        [
+            'name' => 'Pikachu',
+            'type' => 'Electric',
+            'rarity' => 'Common',
+            'set' => 'Base Set',
+            'condition' => 'Near Mint',
+        ],
+        [
+            'name' => 'Charizard',
+            'type' => 'Fire',
+            'rarity' => 'Rare Holo',
+            'set' => 'Base Set',
+            'condition' => 'Excellent',
+        ],
+        [
+            'name' => 'Blastoise',
+            'type' => 'Water',
+            'rarity' => 'Rare Holo',
+            'set' => 'Base Set',
+            'condition' => 'Good',
+        ],
+        // Add more cards as needed
+    ];
+    foreach ($cards as $card) : ?>
+        <li>
+            <strong>Name:</strong> <?= $card['name'] ?><br>
+            <strong>Type:</strong> <?= $card['type'] ?><br>
+            <strong>Rarity:</strong> <?= $card['rarity'] ?><br>
+            <strong>Set:</strong> <?= $card['set'] ?><br>
+            <strong>Condition:</strong> <?= $card['condition'] ?><br>
+        </li>
     <?php endforeach; ?>
 </ul>
 
