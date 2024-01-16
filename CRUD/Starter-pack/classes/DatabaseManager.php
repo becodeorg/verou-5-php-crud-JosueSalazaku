@@ -21,6 +21,7 @@ class DatabaseManager
     public function connect(): void
     {
         // TODO: make the connection to the database
-        $this->connection = null;
+        // $this->connection = null;
+        
     }
 }

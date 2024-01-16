@@ -10,8 +10,8 @@ error_reporting(E_ALL);
 
 // Load you classes
 require_once 'config.php';
-require_once 'classes/DatabaseManager.php';
-require_once 'classes/CardRepository.php';
+require_once '/Applications/XAMPP/xamppfiles/htdocs/php/verou-5-php-crud-JosueSalazaku/CRUD/Starter-pack/classes/DatabaseManager.php';
+require_once '/Applications/XAMPP/xamppfiles/htdocs/php/verou-5-php-crud-JosueSalazaku/CRUD/Starter-pack/classes/CardRepository.php';
 
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
 $databaseManager->connect();
