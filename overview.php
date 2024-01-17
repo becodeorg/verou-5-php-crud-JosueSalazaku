@@ -14,14 +14,14 @@
 <ul>
     <?php
     // dummy Data
-    $cards = [];
+    
     foreach ($cards as $card) : ?>
         <li>
             <strong>Name:</strong> <?= $card['name'] ?><br>
             <strong>Type:</strong> <?= $card['type'] ?><br>
             <strong>Rarity:</strong> <?= $card['rarity'] ?><br>
-            <strong>Set:</strong> <?= $card['set'] ?><br>
-            <strong>Condition:</strong> <?= $card['condition'] ?><br>
+            <strong>Set:</strong> <?= $card['card_set'] ?><br>
+            <strong>Condition:</strong> <?= $card['card_condition'] ?><br>
         </li>
     <?php endforeach; ?>
 </ul>

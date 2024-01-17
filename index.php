@@ -19,35 +19,36 @@ $databaseManager->connect();
 // This example is about a Pokémon card collection
 // Update the naming if you'd like to work with another collection
 $cardRepository = new CardRepository($databaseManager);
-$cards = $cardRepository->get();
+// $cards = $cardRepository->get();
 
 // Get the current action to execute
 // If nothing is specified, it will remain empty (home should be loaded)
 // $action = $_GET['action'] ?? null;
-$page = $_SERVER['REQUEST_URI'];
+$action = $_SERVER['REQUEST_URI'];
 $PATH = "/Applications/XAMPP/xamppfiles/htdocs/php/verou-5-php-crud-JosueSalazaku/CRUD/Starter-pack/classes";
 
 // Load the relevant action
 // This system will help you to only execute the code you want, instead of all of it (or complex if statements)
-switch ($page) {
+switch ($action) {
     case $PATH:
-        overview($databaseManager);
+        overview($cardRepository);
         break;
     case $PATH . 'create':
-        create($databaseManager);
+        create($cardRepository);
         break;
     case $PATH . 'edit':
         echo "Editing ...";
         break;
     default:
-        overview();
+        overview($cardRepository);
         break;
 }
 
-function overview()
+function overview($cardRepository)
 {
     // Load your view
     // Tip: you can load this dynamically and based on a variable, if you want to load another view
+    $cards = $cardRepository->get();
     require 'overview.php';
 }
 
