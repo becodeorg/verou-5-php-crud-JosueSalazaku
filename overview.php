@@ -11,11 +11,15 @@
 
 <h1>Goodcard - track your collection of Pokémon cards</h1>
 
-<form action="POST">
-    <input type="Name" placeholder="ADD POKEMON">
+<form action="">
+    <input type="Name" placeholder=" POKEMON">
+    <input type="Type" placeholder="Type">
+    <input type="rarity" placeholder=" rarity">
+    <input type="set" placeholder="set">
+    <input type="condition" placeholder="condition">
+    
     <button>ADD</button>
 </form>
-
 <ul>
     <?php    
     foreach ($cards as $card) : ?>

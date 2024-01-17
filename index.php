@@ -54,7 +54,6 @@ function overview($cardRepository)
 
 function create($databaseManager)
 {
-
     if(isset($_POST['submit'])) {
         $cardRepository = new CardRepository($databaseManager);
 
