@@ -22,8 +22,10 @@ $cardRepository = new CardRepository($databaseManager);
 $cards = $cardRepository->get();
 
 // Get the current action to execute
-// If nothing is specified, it will remain empty (home should be loaded)
-$action = $_GET['action'] ?? null;
+// // If nothing is specified, it will remain empty (home should be loaded)
+// $action = $_GET['action'] ?? null;
+$page = $_SERVER['REQUEST_URI'];
+$PATH = "/Applications/XAMPP/xamppfiles/htdocs/php/verou-5-php-crud-JosueSalazaku/CRUD/Starter-pack/classes";
 
 // Load the relevant action
 // This system will help you to only execute the code you want, instead of all of it (or complex if statements)

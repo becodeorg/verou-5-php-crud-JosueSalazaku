@@ -35,7 +35,6 @@
             'set' => 'Base Set',
             'condition' => 'Good',
         ],
-        // Add more cards as needed
     ];
     foreach ($cards as $card) : ?>
         <li>
