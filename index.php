@@ -29,8 +29,8 @@ $PATH = "/Applications/XAMPP/xamppfiles/htdocs/php/verou-5-php-crud-JosueSalazak
 
 // Load the relevant action
 // This system will help you to only execute the code you want, instead of all of it (or complex if statements)
-switch ($action) {
-    case 'create':
+switch ($page) {
+    case $PATH:
         create();
         break;
     default:
