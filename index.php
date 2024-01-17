@@ -37,7 +37,7 @@ switch ($action) {
         create($cardRepository);
         break;
     case $PATH . 'edit':
-        echo "Editing ...";
+        echo "Adding...";
         break;
     default:
         overview($cardRepository);
@@ -54,9 +54,19 @@ function overview($cardRepository)
 
 function create($databaseManager)
 {
+
     if(isset($_POST['submit'])) {
-            $cardRepository = new CardRepository($databaseManager);
-            $cardRepository->create();
+        $cardRepository = new CardRepository($databaseManager);
+
+        $cardData = [
+            'name' => $_POST['name'],
+            'type' => $_POST['type'],
+            'rarity' => $_POST['rarity'],
+            'card_set' => $_POST['card_set'],
+            'card_condition' => $_POST['card_condition'],
+        ];
+
+        $cardRepository->create($cardData);
     }
     require 'createView.php';
     // TODO: provide the create logic

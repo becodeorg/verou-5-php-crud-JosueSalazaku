@@ -13,11 +13,24 @@ class CardRepository
         $this->databaseManager = $databaseManager;
     }
 
-    public function create(): void
+    public function create(array $cardData): void
     {
-
+        try {
+            $createQuery = "INSERT INTO pokemon_cards (name, type, rarity, card_set, card_condition) 
+                            VALUES (:name, :type, :rarity, :card_set, :card_condition)";
+    
+            $query = $this->databaseManager->connection->prepare($createQuery);
+    
+            // Bind parameters with values from $cardData
+            $query->execute($cardData);
+    
+        } catch (PDOException $error) {
+            echo $error->getMessage();
+            // Handle the error appropriately, you might not want to return an empty array
+            // or you can rethrow the exception for the calling code to handle
+        }
     }
-
+    
     // Get one
     public function find(): array
     {
@@ -28,14 +41,11 @@ class CardRepository
     public function get(): array
     {
         try {
-            // TODO: Fetch your data from the database (SELECT query)
             $selectQuery = "SELECT * FROM pokemon_cards";
             $query = $this->databaseManager->connection->prepare($selectQuery);
             $query->execute();
     
-            // TODO: Fetch your data at the end of that action.
-            $data = $query->fetchAll(PDO::FETCH_ASSOC);
-    
+            $data = $query->fetchAll();
             return $data;
         } catch (PDOException $error) {
             echo $error->getMessage();
