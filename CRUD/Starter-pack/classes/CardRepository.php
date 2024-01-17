@@ -27,15 +27,21 @@ class CardRepository
     // Get all
     public function get(): array
     {
-        // TODO: Create an SQL query
         // TODO: Use your database connection (see $databaseManager) and send your query to your database.
         // TODO: fetch your data at the end of that action.
         // TODO: replace dummy data by real one
-        return [
-            ['name' => 'dummy one'],
-            ['name' => 'dummy two'],
-        ];
 
+        try {
+             // TODO: Create an SQL query
+            $query = $this->connection->prepare("SELECT * FROM pokemon_cards");
+            $query->execute();
+
+    
+        } catch (PDOException $error) {
+
+            return [];
+        }
+        
         // We get the database connection first, so we can apply our queries with it
         // return $this->databaseManager->connection-> (runYourQueryHere)
     }

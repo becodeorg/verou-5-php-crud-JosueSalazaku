@@ -13,29 +13,8 @@
 
 <ul>
     <?php
-    $cards = [
-        [
-            'name' => 'Pikachu',
-            'type' => 'Electric',
-            'rarity' => 'Common',
-            'set' => 'Base Set',
-            'condition' => 'Near Mint',
-        ],
-        [
-            'name' => 'Charizard',
-            'type' => 'Fire',
-            'rarity' => 'Rare Holo',
-            'set' => 'Base Set',
-            'condition' => 'Excellent',
-        ],
-        [
-            'name' => 'Blastoise',
-            'type' => 'Water',
-            'rarity' => 'Rare Holo',
-            'set' => 'Base Set',
-            'condition' => 'Good',
-        ],
-    ];
+    // dummy Data
+    $cards = [];
     foreach ($cards as $card) : ?>
         <li>
             <strong>Name:</strong> <?= $card['name'] ?><br>
